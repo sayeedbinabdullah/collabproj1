@@ -39,10 +39,10 @@ public class UserRestController {
 	
 	//retrive a specific user
 	
-	@RequestMapping(value="/user/{username}",method=RequestMethod.GET)
-	public User getUser(@PathVariable("username") String username)
+	@RequestMapping(value="/user/{userId}",method=RequestMethod.GET)
+	public User getUser(@PathVariable("userId") long userId)
 	{
-		return userDAO.getUserByUsername(username);
+		return userDAO.getUserById(userId);
 	}
 	
 	
@@ -55,10 +55,10 @@ public class UserRestController {
 	
 	
 	//update an existing user
-		@RequestMapping(value="/user/{username}",method=RequestMethod.PUT)
-		public void updateUser(@RequestBody User user,@PathVariable("username") String username)
+		@RequestMapping(value="/user/{userId}",method=RequestMethod.PUT)
+		public void updateUser(@RequestBody User user,@PathVariable("userId") long userId)
 		{
-			User u=userDAO.getUserByUsername(username);
+			User u=userDAO.getUserById(userId);
 			u.setUsername(user.getUsername());
 			u.setPassword(user.getPassword());
 			u.setCity(user.getCity());
@@ -71,17 +71,16 @@ public class UserRestController {
 	
 	
 	//delete an existing user
-	@RequestMapping(value="/user/{username}",method=RequestMethod.DELETE)
-	public void deleteUser(@PathVariable("username") String username)
+	@RequestMapping(value="/user/{userId}",method=RequestMethod.DELETE)
+	public void deleteUser(@PathVariable("userId") long userId)
 	{
-		userDAO.deleteUser(userDAO.getUserByUsername(username));
+		userDAO.deleteUser(userDAO.getUserById(userId));
 	}
-	
 	
 	@RequestMapping(value="/logincheck", method=RequestMethod.POST)
 	public ResponseEntity <?> logincheck(@RequestBody User user,HttpSession session){
 		System.out.println("Entering UserController : Login()");
-		long userid=user.getUserId();
+		long userId=user.getUserId();
 		User validuser = userDAO.logincheck(user);
 		System.out.println("\n" + user.getUserId());
 		

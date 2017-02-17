@@ -40,9 +40,9 @@ public class UserDAOImpl implements UserDAO{
 		
 	}
 
-	public User getUserByUsername(String username) {
+	public User getUserById(long userId) {
 		Session session=sessionFactory.getCurrentSession();
-		User user=(User)session.createQuery("from User where username='"+username+"'").getSingleResult();
+		User user=(User)session.createQuery("from User where userId="+userId).getSingleResult();
 		
 		return user;
 	}
