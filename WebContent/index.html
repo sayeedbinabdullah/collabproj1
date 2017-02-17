@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head >
@@ -69,28 +68,28 @@ body {
 <nav class="navbar navbar-inverse container navbar-static-top" style="bottom-padding:0"  >
 
 <!--   ##### before login #####  -->
-  <div class="container-fluid" ng-hide="presentUser.userid">     
+  <div class="container-fluid" >     
      <ul class="nav navbar-nav">
       <li><a href="">Welcome to Network Group</a></li>
       <li><a href="#/home">Home</a></li>
       <li><a href="#/aboutus">About Us</a></li>
-      <li><a href="#/contactus">Contact us</a></li>
+      <li><a href="#/contactus"  >Contact us</a></li>
      </ul>    
     
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="#/login"><span class="glyphicon glyphicon-login"></span>Login  </a></li>
+      <li><a href="#/login"><span class="glyphicon glyphicon-login"></span>Login</a></li>
       <li><a href="#/register">Register</a></li>      
     </ul> 
   </div>
  
 <!--   ##### after login #####  -->
 
-  <div class="container-fluid" ng-show="presentUser.userid">     
+  <div class="container-fluid" >     
      <ul class="nav navbar-nav">
      <img src="http://localhost:8093/CollaborationBackend/resources/images/users/{{presentUser.userid}}.jpg" height="80px" width="100px"/>
       <div class="dropdown">
       
-     	  <button class="dropbtn">Welcome {{presentUser.fullname}}</button>
+     	  <button class="dropbtn">Welcome {{presentUser.userid}}</button>
    		  <div class="dropdown-content">      
           <a href="#/editProfile">Edit Profile</a>
           <a href="" ng-click="logoff()"><span class="fa fa-sign-out">   Logout</span></a>    
@@ -127,6 +126,16 @@ body {
    		  <div class="dropdown-content">   
 		  <a href="#/displayUsers">Display Users</a>   		      	  
           <a href="#/uploadPicture">Upload Picture</a>
+         <!--  <a href="#/chat">Chat</a>             
+          --> </div>
+     </div>      
+     
+      <div class="dropdown">
+     	  <button class="dropbtn">Friends</button>
+   		  <div class="dropdown-content">   
+		  <a href="#/searchfriend">Search Friend</a>   		      	  
+          <a href="#/viewfriend">View Friend</a>
+          <a href="#/friendrequest">Friend Request</a>
          <!--  <a href="#/chat">Chat</a>             
           --> </div>
      </div>          

@@ -1,6 +1,6 @@
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>New Blogs</title>
 </head>
 <body>
 
@@ -15,7 +15,7 @@
 <tr>
 <th>Blog Title</th> <th>Blog Content</th> <th>Created By</th> <th>BLOG ID</th> <th>STATUS</th> <th>ACCEPT</th> <th>REJECT</th>
 </tr>
-<div ng-controller="BlogController">
+<div ng-controller="BlogRestController">
 <tr ng-repeat="blog in nblogs" class="table-striped">
 <td>{{blog.title}}</td> <td>{{blog.description}}</td> <td>{{blog.user.userid}}</td> <td>{{blog.blogId}}</td> <td>{{blog.status}}</td> <td><button class="btn btn-success" ng-click="approveBlog(blogId)">Approve Blog</button>
 </td><td><button class="btn btn-danger" ng-click="rejectBlog(blogId)">Reject Blog</button>

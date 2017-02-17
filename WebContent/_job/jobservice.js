@@ -1,6 +1,6 @@
 app.factory('JobService',function($http){
 	var jobService=this;
-	var BASE_URL ="http://localhost:9109/collab2"
+	var BASE_URL ="http://localhost:8093/CollaborationBackend"
 	//var BASE_URL="http://172.23.170.91:1010/toygroup1"
 	jobService.saveJob=function(job){
 		console.log("successfully reached jobservice");
