@@ -23,7 +23,7 @@ body {
    
 }
 .dropbtn {
-    background-color: DarkKhaki;
+    background-color: lightgreen;
     color: black;
     padding: 16px;
     font-size: 16px;
@@ -70,7 +70,7 @@ body {
 <!--   ##### before login #####  -->
   <div class="container-fluid" >     
      <ul class="nav navbar-nav">
-      <li><a href="">Welcome to Network Group</a></li>
+      <li><a href="#/home">Interactz</a></li>
       <li><a href="#/home">Home</a></li>
       <li><a href="#/aboutus">About Us</a></li>
       <li><a href="#/contactus"  >Contact us</a></li>
@@ -89,10 +89,10 @@ body {
      <img src="http://localhost:8093/CollaborationBackend/resources/images/users/{{presentUser.userid}}.jpg" height="80px" width="100px"/>
       <div class="dropdown">
       
-     	  <button class="dropbtn">Welcome {{presentUser.userid}}</button>
+     	  <button class="dropbtn">Welcome {{presentUser.userId}}</button>
    		  <div class="dropdown-content">      
           <a href="#/editProfile">Edit Profile</a>
-          <a href="" ng-click="logoff()"><span class="fa fa-sign-out">   Logout</span></a>    
+          <a href="#/home" ng-click="logoff()"><span class="fa fa-sign-out">Logout</span></a>    
          </div>
       </div>	 
      
