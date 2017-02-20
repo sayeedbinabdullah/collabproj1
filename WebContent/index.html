@@ -68,7 +68,7 @@ body {
 <nav class="navbar navbar-inverse container navbar-static-top" style="bottom-padding:0"  >
 
 <!--   ##### before login #####  -->
-  <div class="container-fluid" >     
+  <div class="container-fluid" ng-hide="presentUser.userId">     
      <ul class="nav navbar-nav">
       <li><a href="#/home"><img src="Interactz.jpg"></a></li>
       <li><a href="#/home">Home</a></li>
@@ -84,9 +84,9 @@ body {
  
 <!--   ##### after login #####  -->
 
-  <div class="container-fluid" >     
+  <div class="container-fluid" ng-show="presentUser.userId">     
      <ul class="nav navbar-nav">
-     <img src="http://localhost:8093/CollaborationBackend/resources/images/users/{{presentUser.userid}}.jpg" height="80px" width="100px"/>
+     <img src="http://localhost:8093/CollaborationBackend/resources/images/users/{{presentUser.userId}}.jpg" height="80px" width="100px"/>
       <div class="dropdown">
       
      	  <button class="dropbtn">Welcome {{presentUser.userId}}</button>
